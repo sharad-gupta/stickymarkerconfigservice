@@ -17,7 +17,7 @@ public class UrlNoteConfig {
 
 	@Bean
 	public AmazonDynamoDB amazonDynamoDB() {
-		LOGGER.info("amazonDynamoDB ==> invoked test >>>");
+		LOGGER.info("amazonDynamoDB ==> invoked test init1 >>>");
 		AmazonDynamoDB amazonDynamoDB = AmazonDynamoDBClientBuilder.standard().build();
 		return amazonDynamoDB;
 	}
