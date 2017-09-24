@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  name: sticky-marker-deployment
+spec: 
+  replicas: 3
+  template: 
+    metadata: 
+      labels: 
+        app: stickymarker
+    spec: 
+      containers: 
+        - image: shgupta/sticky-marker-repo
+          name: sticky-marker
+          ports: 
+            - containerPort: 8080
+              name: stkymkr-port
+          volumeMounts: 
+            - mountPath: /var/log/sfsite/services-media-springboot-8080
+              name: sticky-marker-volume
+      volumes: 
+        - hostPath: 
+            path: /var/log/sfsite/services-media-springboot-8080
+          name: sticky-marker-volume

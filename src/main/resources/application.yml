@@ -1,0 +1,7 @@
+management.security.enabled: false
+
+spring: 
+  aop.proxy-target-class: true
+  application.name: "Sticky Marker"
+  jmx.enabled: false
+  main.show-banner: false

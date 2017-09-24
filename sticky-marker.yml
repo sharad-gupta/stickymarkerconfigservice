@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sticky-marker-pod
+  labels:
+    app: stickymarker
+spec:
+  containers:
+  - name: docker-demo
+    image: shgupta/docker-demo
+    ports:
+    - name: stkymkr-port
+      containerPort: 8080
+    volumeMounts:
+    - name: sticky-marker-volume
+      mountPath: /dist/mediaserver/config
+  volumes:
+  - name: sticky-marker-volume
+    hostPath:
+      path: /dist/mediaserver/config

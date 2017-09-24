@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Copied from spring-board's logback-common to be able to configure log sizing -->
+
+    <!-- include basic spring-boot logging config so that we can leverage
+    color console output and some basic settings. we need to specify
+    a different type of file logging approach however. -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+
+    <!-- Note: category portion of this pattern does not match legacy SFLY format, which
+    is to always display the last two parts of the package (e.g., "shipping.Application")
+    whereas this will always display at least one character from the package
+    (e.g., "c.s.s.shipping.Application") -->
+    <property name="FILE_LOG_PATTERN" value="%d %-5p [%t] %c{15} %m%n"/>
+ 
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

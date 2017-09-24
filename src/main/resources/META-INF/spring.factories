@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.shgupta.stickymarker.service.urlnote.UrlNoteConfig,\
+com.shgupta.stickymarker.service.urlnote.UrlNoteResource

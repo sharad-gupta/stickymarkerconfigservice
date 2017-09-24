@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sticky-marker-service
+spec:
+  ports:
+  - port: 31001
+    targetPort: stkymkr-port
+    protocol: TCP
+  selector:
+    app: stickymarker
+  type: NodePort

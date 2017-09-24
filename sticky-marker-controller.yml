@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: sticky-marker-controller
+spec:
+  replicas: 3
+  selector:
+    app: stickymarker
+  template:
+    metadata:
+      labels:
+        app: stickymarker
+    spec:
+      containers:
+      - name: docker-demo
+        image: shgupta/docker-demo
+        ports:
+        - name: stkymkr-port
+          containerPort: 8080
