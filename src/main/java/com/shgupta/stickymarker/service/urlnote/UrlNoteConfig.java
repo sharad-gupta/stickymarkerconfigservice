@@ -17,14 +17,14 @@ public class UrlNoteConfig {
 
 	@Bean
 	public AmazonDynamoDB amazonDynamoDB() {
-		LOGGER.info("amazonDynamoDB ==> invoked test >>>");
+		LOGGER.info("amazonDynamoDB ==> invoked test init1 >>>");
 		AmazonDynamoDB amazonDynamoDB = AmazonDynamoDBClientBuilder.standard().build();
 		return amazonDynamoDB;
 	}
 
 	@Bean
 	public DynamoDB dynamoDB(AmazonDynamoDB amazonDynamoDB) {
-		LOGGER.info("dynamoDB ==> invoked");
+		LOGGER.info("dynamoDB ==> invoked v2");
 		return new DynamoDB(amazonDynamoDB);
 	}
 
