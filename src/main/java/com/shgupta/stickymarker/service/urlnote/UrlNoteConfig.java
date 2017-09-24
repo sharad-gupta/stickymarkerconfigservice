@@ -24,7 +24,7 @@ public class UrlNoteConfig {
 
 	@Bean
 	public DynamoDB dynamoDB(AmazonDynamoDB amazonDynamoDB) {
-		LOGGER.info("dynamoDB ==> invoked");
+		LOGGER.info("dynamoDB ==> invoked v2");
 		return new DynamoDB(amazonDynamoDB);
 	}
 
