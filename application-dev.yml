@@ -1,3 +1,2 @@
-user:
- role: QA
- password: test123
+user_role: QA
+user_password: test123
